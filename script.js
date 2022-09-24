@@ -4,17 +4,25 @@ function Creatgrid(columns, rows) {
         let column = document.createElement('div'); // creat columns
         column.classList.add('column');
         for (j = 0; j < rows; j++) {
-            let row = document.createElement('div') // creat row
+            var row = document.createElement('div') // creat row
             row.classList.add('row');
-           
             column.appendChild(row);
+            Topaint(row)
+        
         }
         container.appendChild(column);
+        
+        
     }
 }
 
 
+function Topaint(element) {
+    element.addEventListener('mouseenter', e => element.classList.add('black'))
+}
+
 Creatgrid(16, 16)
+
 
 
 
