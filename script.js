@@ -1,5 +1,6 @@
 function Creatgrid(columns, rows) {
     let container = document.querySelector('#container');
+    container.innerHTML =  ''
     for(let i = 0; i < columns; i++) {
         let column = document.createElement('div'); // creat columns
         column.classList.add('column');
@@ -21,22 +22,23 @@ function Topaint(element) {
     element.addEventListener('mouseenter', e => element.classList.add('black'))
 }
 
-Creatgrid(16, 16)
+function Getconfirmbuttonvalue(){
+var subbutton = document.getElementById('confirmbutton')
+subbutton.addEventListener('click', () => {
+    let gridsize = Tocheckradio()
+    Creatgrid(gridsize, gridsize)
+})
 
-
-
-
-
-/* function Creatsquare(containeridstring, number){
-    let container = document.getElementById(`${containeridstring}`)
-    for(let i = 0; i <= number; i++){
-    let square = document.createElement('div')
-    square.classList.add('grid')
-    square.setAttribute('id', `square${i}`)
-    square.textContent = `${i}`
-    container.appendChild(square)
 }
 
-} */
+console.log(Getconfirmbuttonvalue())
+function Tocheckradio(){
+    var radios = document.getElementsByName('gridsize');
+    for (var i = 0; i < radios.length; i++){
+        if (radios[i].checked) {
+            var radiovalue = radios[i].value
+        }
+    }
+    return radiovalue
+}
 
- 
