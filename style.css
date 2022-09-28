@@ -1,6 +1,22 @@
 #container {
     display: flex;
+    justify-content: center;
+    
 }
+
+#gridsize {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    
+}
+
+
+#confirmbutton {
+    border-radius: 5px;
+}
+
 
 .column {
     flex: 0;
